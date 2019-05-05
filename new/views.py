@@ -61,3 +61,4 @@ def signup(request):
 
 def find_people(request):
     return render(request, 'find_people.html')
+    
