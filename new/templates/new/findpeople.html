@@ -78,52 +78,73 @@ select{
   height:40px;
   margin-right:5px;
 }
+table{
+  margin:auto;
+}
 #category{
   height:30px;
-  width: 1550px;
-  font-family: 'Binggrae-Bold';
+  width: 100%;
 }
-#category ul li{
-  list-style: none;
+#category table tr th{
   color: #000000;
   background-color: #c5ecfd;
-  float :left;
   line-height: 40px;
-  vertical-align: middle;
   text-align: center;
-  border:1px solid #ffffff;
-  border-radius: 5px;
-  width:150px;
+  border:3px solid #ffffff;
+  border-radius: 10px;
+  width:200px;
+  font-family: 'Binggrae-Bold';
+}
+
+.table_container{
+    display: flex;
+    justify-content: center;
 }
 </style>
 </head>
 
 <body>
   <div class="d5">
-  <form>
-    <select name="검색어">
-      <option value="검색어">검색어</option>
-      <option value="나라">나라</option>
-      <option value="지역">지역</option>
-      <option value="나이">나이</option>
+  <form action="{% url 'new:findpeople' %}" method="POST">
+        {% csrf_token %}
+    <select name="selSearchType">
+      <option value="나라" >나라</option>
+      <option value="지역" >지역</option>
+      <option value="나이" >나이</option>
     </optgroup>
   </select>
-
-    <input type="text" placeholder="검색어 입력">
+<!-- 카테고리 -->
+<!-- 검색어 -->
+    <input name='txtSearch' type="text" placeholder="검색어 입력">
     <button type="submit"></button>
   </form>
 </div>
 </form>
 
 <div id="category">
-<ul>
-<li style="width: 50px;">번호</li>
-<li style="width: 200px">이름</li>
-<li>나라</li>
-<li>지역</li>
-<li>나이</li>
-<li style="width: 750px;">기타</li>
-</ul>
+  <div>
+    <table>
+      <tr>
+        <th>이름</th>
+        <th>나라</th>
+        <th>지역</th>
+        <th>나이</th>
+        <th>연락처</th>
+        <th>소개</th>
+      </tr>
+{% for person in people %}
+      <tr>
+        <td>{{person.name}}</td>
+        <td>{{person.country}}</td>
+        <td>{{person.region}}</td>
+        <td>{{person.age}}</td>
+        <td>{{person.phone}}</td>
+        <td>{{person.introduction}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
 </div>
 </body>
 </html>

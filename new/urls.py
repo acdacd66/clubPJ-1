@@ -15,4 +15,6 @@ urlpatterns = [
     path('save/',views.save, name="save"),
     path('introduce/', views.introduce, name='introduce'),
     path('logout/',views.logout,name="logout"),
+    path('findpeople/',views.findpeople, name="findpeople"),
+    
   ]

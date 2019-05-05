@@ -22,23 +22,16 @@ def login(request):
     else:
         return render(request, 'login.html')
 
-#   def create(request):
-#     form = PostForm()
-#     if request.method == "POST":
-#         form = PostForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('new:list')
-#     return render(request, 'new/create.html', {'create': create})
     
 def create(request): 
-    
+     
     if request.method == "POST":
         
+        print(request.POST)
         title = request.POST.get('title')  
         content = request.POST.get('content')
         writer = request.POST.get('writer')
-        post = Post(title=title, content=content, writer=writer) 
+        post = Post(title=title, content=content, writer=writer)
         post.save()
         return redirect('new:log')
     return render(request, 'new/create.html')
@@ -79,9 +72,21 @@ def signup(request):
         return render(request, 'signup.html')
     return render(request, 'home.html')
 
-def find_people(request):
-    return render(request, 'find_people.html')
-    
+def findpeople(request):
+    try:
+        type_search = request.POST['selSearchType']
+        txt_search = request.POST['txtSearch']
+        if type_search == "나라":
+            people = Post.objects.filter(country=txt_search )
+        elif type_search == "지역":
+            people = Post.objects.filter(region=txt_search )
+        else :
+            people = Post.objects.filter(age=txt_search )
+        
+        
+    except:
+        people = Post.objects.all()
+    return render(request, 'new/findpeople.html', {'people' : people})
     
         
 def update(request, id):

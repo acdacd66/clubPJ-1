@@ -5,7 +5,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,6 @@ font-family: 'Binggrae-Bold';
          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');
            font-style: normal;
        }
-
         * {
             font-family: 'Binggrae-Bold';
    
@@ -58,8 +57,10 @@ font-family: 'Binggrae-Bold';
                        placeholder="게시글 내용" required></textarea>
 
                </div>
-
-              <a href= "{% url 'new:log' %}"button type="submit" style="font-style: italic;" class="btn btn-primary">Submit</button>           </form>-->
+                <button type="submit" style="font-style: italic;" class="btn btn-primary">Submit</button>           
+              </form>
+              
+              <a href= "{% url 'new:log' %}">목록</a>
 
        </div>
     </div>
@@ -67,7 +68,4 @@ font-family: 'Binggrae-Bold';
 
 </html>
 
- 
-
-    </form>
 {% endblock %}
