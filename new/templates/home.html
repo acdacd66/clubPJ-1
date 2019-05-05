@@ -6,10 +6,14 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>Document</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <link rel="stylesheet" href="home.css">
      <style>
       @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500,800");
+
+@font-face { font-family: 'Binggrae-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 figure.snip1200 {
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
@@ -138,7 +142,7 @@ h1{
 {% block content %}
  <body>
  
-     <h1>제목</h1>
+     <div style="text-align: center" class="alert alert-info" role="alert">제목</div>
      <div class="menucontainer">
          <figure class="snip1200">
              <img src="https://previews.123rf.com/images/gmast3r/gmast3r1511/gmast3r151100286/47576403-%EB%8B%A4%EC%96%91%ED%95%9C-%ED%98%BC%ED%95%A9-%EC%9D%B8%EC%A2%85-%EA%B7%B8%EB%A3%B9-%EC%82%AC%EB%9E%8C%EB%93%A4-%EC%BA%90%EC%A3%BC%EC%96%BC-%EB%82%A8%EC%9E%90%EC%99%80-%EC%97%AC%EC%9E%90-%ED%95%99%EC%83%9D-%ED%8F%89%EB%A9%B4-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98.jpg" alt="sq-sample27" />
@@ -178,7 +182,7 @@ h1{
          <figure class="snip1200">
              <img src="http://napu.co.kr/web/upload/%EC%9E%90%EC%9C%A0%EA%B2%8C%EC%8B%9C%ED%8C%90.jpg" alt="sq-sample31" />
              <figcaption>
-                <a href="{% url 'new:realfr' %}">자기소개 타임</a>
+                
                  <div class="heading">
                      <h2>My<span> Work</span></h2>
                  </div>
@@ -190,7 +194,15 @@ h1{
 
 {% endblock %}
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+   </script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+   </script>
      <script src="https://code.jquery.com/jquery-3.4.1.min.js"
          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
      <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>

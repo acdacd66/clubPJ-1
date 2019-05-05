@@ -1,16 +1,14 @@
+
 {% extends 'home.html' %}
 
-
 {% block content %}
-    
-<h1>글을 작성하겠습니다.</h1>
 
-<form action="{% url 'new:create' %}" method="POST" >
-    {% csrf_token %}
 
- 
-    
-    <!DOCTYPE html>
+    <h1>글을 작성하겠습니다.</h1>
+
+    <form action="{% url 'new:create' %}" method="POST">
+     {% csrf_token %}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,38 +29,50 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="게시판.css">
     <style>
-    
+        @font-face {
+            font-family: 'Binggrae-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            font-family: 'Binggrae-Bold';
+        }
     </style>
 </head>
 
 <body>
-    <div class="formlarge">
-        <form>
-            <div class="form-group">
-                <label style="font-weight: bold; font-style:italic" exampleInputEmail1">Title</label>
-                <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="글 제목"/>
+    <div class="container">
+        <div class="formlarge">
+            <form action=""  class="was-validated">
+                <div class="form-group">
+                    <label style="font-weight: bold; font-style:italic; color: #0069D9"
+                        >Title</label>
+                    <input type="text" name="title" value="{{  post.title  }}" class="form-control" id="exampleInputEmail1" placeholder="글 제목" />
 
-            </div>
-            <div class="form-group">
-                <label style="font-style: italic"exampleInputPassword1">Writer</label>
-               <input type="text" name="writer" class="form-control" id="exampleInputPassword1" placeholder="작성자"/>
-            </div>
-            <form class="was-validated">
-                    <div class="mb-3">
-                      <label style="font-style: italic"validationTextarea">Textarea</label>
-                      <textarea name='content' style="height:350px;" class="form-control form-control-lg" id="validationTextarea" placeholder="게시글 내용" required></textarea>
-                      
-                    </div>
-           
-            <button type="submit" style="font-style: italic;" class="btn btn-primary">Submit</button>
-        
-         
-        </form>
+                </div>
+                <div class="form-group">
+                    <label style="font-style: italic" exampleInputPassword1">Writer</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="작성자" />
+                </div>
+                <div class="mb-3">
+                    <label style="font-style: italic" validationTextarea">Textarea</label>
+                    <textarea style="height:350px;" name='content' class="form-control form-control-lg" id="validationTextarea"
+                        placeholder="게시글 내용" required>{{  post.content  }}</textarea>
 
+                </div>
 
+                <button type="submit" style="font-style: italic;" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
     </div>
-    </form>
+
 
 </html>
-    
-{% endblock %}
+
+ 
+
+    </form>
+{% endblock content %}

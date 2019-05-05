@@ -120,27 +120,3 @@ def save(request):
 def mypage(request):
     return render(request,'new/mypage.html')
     
-def realfr(request):
-    posts = Post.objects.all()
-    return render(request, 'new/realfr.html', {"posts" : posts})
-    
-    
-def update2(request, id):
-    post =  get_object_or_404(Post, pk=id)
-    if request.method == "POST":
-        title = request.POST.get('title')
-        content = request.POST.get('content')
-        writer = request.POST.get('writer')
-        post.title = title
-        post.content =  content
-        post.writer = writer
-        post.save()
-        return redirect('new:show', post.pk)
-    return render(request, 'new/update2.html', {"post2": post})
-        
-        
-def delete2(request, id):
-    post =  get_object_or_404(Post, pk=id)
-    if request.method == "POST":
-        post.delete()
-        return redirect('new:realfr.html')
