@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1>posts</h1>
+
+    <a href="{% url 'posts:create' %}" class="btn btn-primary">글 작성</a>
+
+    {% for post in posts %}
+    <div class="card" style="width: 18rem; margin-top: 20px;">
+        <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content }}</p>
+            <a href="{% post:show post.id %}" class="card-link">보러가기</a>
+            <a href="#" class="card-link">{{ post.created_at }}</a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock content %}    
