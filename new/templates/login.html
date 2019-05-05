@@ -293,7 +293,7 @@ body .container .content .signup-cont {
 			        </div>
 			        <div class="content">
 				            <div class="signin-cont cont">
-                        <form method="POST" action="{% url 'login'%}">
+                        <form action="{% url 'login'%}" method="POST">
                             {% csrf_token %}
 						                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="your id">
 						                    <label for="email">Your id</label>

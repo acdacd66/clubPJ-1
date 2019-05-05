@@ -31,9 +31,9 @@ def create(request):
             return redirect('new:list')
     return render(request, 'new/create.html', {'create': create})
     
-def list(request):
+def log(request):
     posts = Post.objects.all()
-    return render(request, 'new/list.html', {'list': list})
+    return render(request, 'new/log.html',{'posts':posts})
     
 def show(request, id):
     post = Post.objects.get(pk=id)
