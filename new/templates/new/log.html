@@ -3,18 +3,22 @@
 
 {% block content %}
 
-    <h1>posts</h1>
-https://google-gooyejin9.c9users.io/new/create/
-    <a href="{% url 'new:create' %}" class="btn btn-primary">글 작성</a>
+    
+  <h1>Make Your Blog! </h1>
+<a href="{%url 'new:create' %}">새로운 글 작성하기</a>
 
-    {% for post in posts %}
-    <div class="card" style="width: 18rem; margin-top: 20px;">
-        <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.content }}</p>
-            <a href="{% url 'new:show' post.id %}" class="card-link">보러가기</a>
-            <a href="#" class="card-link">{{ post.created_at }}</a>
-        </div>
-    </div>
+    <h2>글 목록 입니다</h2><br>
+    
+    {% for post in all_posts %}
+    
+        <p>title: {{ post.title }}</p>
+        <p>content: {{ post.content }}</p>
+        <p>who: {{ post.writer }}</p>
+        <p>{{ post.created_at }}</p>
+        <a href="{% url 'new:show' post.pk %}">보러가기</a>
+        <p>==========================</p>
+    
     {% endfor %}
-{% endblock %}    
+    
+    {% endblock %}
+  

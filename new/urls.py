@@ -7,8 +7,10 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('log/', views.log, name='log'),
     path('create/', views.create, name="create"),
-    path('<int:id>/', views.show, name="show"),
     path('home/', views.home, name="home"),
-    path('show/', views.show, name="show"),
-
-]
+    path('show/<int:id>/', views.show, name="show"),
+    path('update/<int:id>/', views.update, name='update'),
+    path('delete/<int:id>/', views.delete, name='delete'),
+    path('creator/', views.creator, name='creator'),
+    path('descript/', views.descript, name='descript'),
+  ]

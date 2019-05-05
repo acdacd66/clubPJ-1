@@ -6,9 +6,64 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 <style>
 fieldset{
     padding: 0 1em 1em 1em;
+}
+
+legend{
+    padding: 1em;
+}
+* {box-sizing: border-box;}
+body{
+  margin: 0;
+}
+div {
+  padding: 30px 0
+}
+form {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+.d5 {
+  background: #683B4D;
+}
+.d5 input, .d5 button {
+  outline: none;
+  background: transparent;
+}
+.d5 input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+  border: 3px solid #F9F0DA;
+}
+.d5 button {
+  border: none;
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding-top:35px;
+}
+.d5 button:before {
+  content: "\f002";
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  color: #F9F0DA;
+}
+.d5 input:focus {
+  border-color: #311c24
 }
 
 #category{
@@ -30,50 +85,19 @@ fieldset{
 </head>
 
 <body>
-  <form action>
-    <fieldset style="text-align:center;">
-      <legend style="text-align:center;">원하는 특징</legend>
-
-    <select name="나라">
+  <div class="d5">
+  <form>
+    <select name="검색어">
+      <option value="검색어">검색어</option>
       <option value="나라">나라</option>
-    <optgroup label="유럽">
-      <option value="영국">영국</option>
-      <option value="독일">독일</option>
-      <option value="프랑스">프랑스</option>
-    </optgroup>
-    <optgroup label="아시아">
-      <option value="일본">일본</option>
-    </optgroup>
-    <optgroup label="아메리카">
-      <option value="미국">미국</option>
-      <option value="캐나다">캐나다</option>
-    </optgroup>
-    <optgroup label="오세아니아">
-      <option value="호주">호주</option>
-      <option value="뉴질랜드">뉴질랜드</option>
+      <option value="지역">지역</option>
+      <option value="나이">나이</option>
     </optgroup>
   </select>
-
-  <select name="지역">
-    <option value="지역">지역</option>
-    <option value="수도">수도</option>
-    <option value="북부">북부</option>
-    <option value="동부">동부</option>
-    <option value="서부">서부</option>
-    <option value="남부">남부</option>
-  </optgroup>
-</select>
-
-  <select name="나이">
-    <option value="나이">나이</option>
-    <option value="20~22">20~22</option>
-    <option value="23~25">23~26</option>
-    <option value="26~28">26~28</option>
-    <option value="29이상">29이상</option>
-  </optgroup>
-</select>
-<input type="submit" value="완료">
-</fieldset>
+    <input type="text" placeholder="검색어 입력">
+    <button type="submit"></button>
+  </form>
+  </div>
 </form>
 
 <div id="category">
@@ -86,7 +110,6 @@ fieldset{
 <li style="width: 700px;">기타</li>
 </ul>
 </div>
-
 </body>
 </html>
 
