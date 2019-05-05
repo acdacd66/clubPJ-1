@@ -90,21 +90,27 @@
 </style>
 </head>
 <body>
+        <form action="{% url 'new:save' %}" method="POST">
 <div class="wrapper">
   <div class="contact-form">
+        <form action="{% url 'new:save' %}" method="POST">
+                {% csrf_token %}
     <div class="input-fields">
-      <input type="text" class="input" placeholder="이름">
-      <input type="text" class="input" placeholder="나라">
-      <input type="text" class="input" placeholder="지역">
-      <input type="text" class="input" placeholder="나이">
-      <input type="text" class="input" placeholder="연락처">
+
+      <input type="text" class="input" placeholder="이름" name="nam">
+      <input type="text" class="input" placeholder="나라" name="country">
+      <input type="text" class="input" placeholder="지역" name="region">
+      <input type="text" class="input" placeholder="나이" name="age">
+      <input type="text" class="input" placeholder="연락처" name="phone">
     </div>
   <div class="msg">
-    <textarea placeholder="소개"></textarea>
-    <div class ="btn">저장</div>
-    <div class ="btn">홈으로</div>
+    <textarea placeholder="소개" name="introduction"></textarea>
+    <button type="submit" style="font-style: italic;" class="btn btn-primary">저장</button>
+
+   
   </div>
 </div>
 </div>
+</form>
 </body>
 </html>

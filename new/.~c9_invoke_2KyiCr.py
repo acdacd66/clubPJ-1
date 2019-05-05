@@ -14,8 +14,79 @@ urlpatterns = [
     path('creator/', views.creator, name='creator'),
     path('descript/', views.descript, name='descript'),
     path('mypage/',views.mypage, name="mypage"),
-    path('save/',views.save, name="save"),
-    path('realfr/', views.realfr, name="realfr"),
-    path('update2/<int:id>/', views.update2, name='update2'),
-    path('delete2/<int:id>/', views.delete2, name='delete2'),
+    path('save/',views.save,name="save"),
   ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

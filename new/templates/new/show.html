@@ -11,8 +11,10 @@
 <form action="{% url 'new:delete' post.pk %}" method="POST">
     {% csrf_token %}
     <input type="submit" value="삭제"/>
+    
   
-</form>>
+</form><br><br><br><br>
+  <a href="{% url 'new:log' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">목록으로</a>
 
 
 

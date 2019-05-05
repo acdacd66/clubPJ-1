@@ -11,11 +11,8 @@ urlpatterns = [
     path('show/<int:id>/', views.show, name="show"),
     path('update/<int:id>/', views.update, name='update'),
     path('delete/<int:id>/', views.delete, name='delete'),
-    path('creator/', views.creator, name='creator'),
+    path('delete/<int:id>/', views.delete, name='delete')
     path('descript/', views.descript, name='descript'),
     path('mypage/',views.mypage, name="mypage"),
-    path('save/',views.save, name="save"),
-    path('realfr/', views.realfr, name="realfr"),
-    path('update2/<int:id>/', views.update2, name='update2'),
-    path('delete2/<int:id>/', views.delete2, name='delete2'),
+    path('save/',views.save,name="save"),
   ]
