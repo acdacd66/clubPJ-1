@@ -1,0 +1,93 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+fieldset{
+    padding: 0 1em 1em 1em;
+}
+
+#category{
+  height:30px;
+  width: 1500px;
+}
+#category ul li{
+  list-style: none;
+  color: #000000;
+  background-color: #ffffff;
+  float :left;
+  line-height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  border:1px solid;
+  width:150px;
+}
+</style>
+</head>
+
+<body>
+  <form action>
+    <fieldset style="text-align:center;">
+      <legend style="text-align:center;">원하는 특징</legend>
+
+    <select name="나라">
+      <option value="나라">나라</option>
+    <optgroup label="유럽">
+      <option value="영국">영국</option>
+      <option value="독일">독일</option>
+      <option value="프랑스">프랑스</option>
+    </optgroup>
+    <optgroup label="아시아">
+      <option value="일본">일본</option>
+    </optgroup>
+    <optgroup label="아메리카">
+      <option value="미국">미국</option>
+      <option value="캐나다">캐나다</option>
+    </optgroup>
+    <optgroup label="오세아니아">
+      <option value="호주">호주</option>
+      <option value="뉴질랜드">뉴질랜드</option>
+    </optgroup>
+  </select>
+
+  <select name="지역">
+    <option value="지역">지역</option>
+    <option value="수도">수도</option>
+    <option value="북부">북부</option>
+    <option value="동부">동부</option>
+    <option value="서부">서부</option>
+    <option value="남부">남부</option>
+  </optgroup>
+</select>
+
+  <select name="나이">
+    <option value="나이">나이</option>
+    <option value="20~22">20~22</option>
+    <option value="23~25">23~26</option>
+    <option value="26~28">26~28</option>
+    <option value="29이상">29이상</option>
+  </optgroup>
+</select>
+<input type="submit" value="완료">
+</fieldset>
+</form>
+
+<div id="category">
+<ul>
+<li style="width: 50px;">번호</li>
+<li style="width: 200px">이름</li>
+<li>나라</li>
+<li>지역</li>
+<li>나이</li>
+<li style="width: 700px;">기타</li>
+</ul>
+</div>
+
+</body>
+</html>
+
+{% endblock %}
